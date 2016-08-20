@@ -1,0 +1,30 @@
+<h3>Post Form</h3>
+
+
+<%= form_tag posts_path do %>
+  <label>Post title:</label><br>
+  <%= text_field_tag :title %><br>
+
+  <label>Post Description</label><br>
+  <%= text_area_tag :description %><br>
+
+  <%= submit_tag "Submit Post" %>
+<% end %>
+
+<!-- {"post"=>{"action"=>"create", "authenticity_token"=>"rn2y1jGhh3vR6Ju6hNJ073lBEq4nREjmSgKY3utZqEpmnQaRWMXCtmYmLNI5Okw1DLAD+PfkIGsqSTM1nYLotw==", "commit"=>"Submit Post", "controller"=>"posts", "description"=>"desc", "title"=>"Title 21", "utf8"=>"✓"}, "controller"=>"posts", "action"=>"new"} -->
+
+<!-- <form>
+  <label>Post title:</label>
+  <form action="<%= posts_path %>" method="post">
+  <input type="text" id="post_title" name="title">
+  <br>
+  <label>Post Description:</label>
+  <textarea id="post_description" name="description"></textarea>
+  <br>
+ <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="submit" value="Submit Post">
+</form> -->
+
+<!-- {"title"=>"post 100", "description"=>"des", "authenticity_token"=>"No7pBG8TehWI+TmN5J1mR/ngH/svz9u+FMWLpsYO7wX+bl1DBnc/2D83juVZdV6djBEOrf9vszN0jiBNsNWv+A==", "controller"=>"posts", "action"=>"new"} -->
+
+<%= params.inspect %>
